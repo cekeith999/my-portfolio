@@ -2,9 +2,18 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ViewSwitcher from './components/ViewSwitcher';
-import ProjectGrid from './components/ProjectGrid';
-import DetailedView from './components/DetailedView';
+import dynamic from 'next/dynamic';
+
+// Dynamically import client components
+const ViewSwitcher = dynamic(() => import('./components/ViewSwitcher'), {
+  ssr: false
+});
+const ProjectGrid = dynamic(() => import('./components/ProjectGrid'), {
+  ssr: false
+});
+const DetailedView = dynamic(() => import('./components/DetailedView'), {
+  ssr: false
+});
 
 // Sample projects data using existing Next.js and Vercel logos
 const projects = [
