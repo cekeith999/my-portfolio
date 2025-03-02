@@ -30,22 +30,22 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
         </p>
       </header>
       
-      <div className="grid grid-cols-4 gap-[100px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
         {projects.map((project) => (
           <motion.div
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => onProjectClick(project)}
-            className="cursor-pointer group"
+            className="cursor-pointer group w-full"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 project-image-container">
+            <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 project-image-container w-full">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                sizes="(max-width: 768px) 100vw, 25vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 priority
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
