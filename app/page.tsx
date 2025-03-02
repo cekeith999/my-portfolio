@@ -135,6 +135,7 @@ export default function Home() {
               projects={projects}
               onProjectClick={handleProjectClick}
             />
+            <div className="page-overlay"></div>
           </motion.div>
         )}
 
