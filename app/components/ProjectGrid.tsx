@@ -36,8 +36,7 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => onProjectClick(project)}
-            className="cursor-pointer group w-full"
-            whileHover={{ scale: 1.02 }}
+            className="cursor-pointer w-full"
             transition={{ duration: 0.2 }}
           >
             <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 project-image-container w-full">
@@ -47,7 +46,7 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 priority
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover"
               />
             </div>
             <div className="mt-4 text-center">
