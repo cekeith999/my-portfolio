@@ -65,7 +65,6 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                     } as any}
                   />
                 </div>
-                <div className="page-overlay" />
                 <div className="mt-2">
                   <h3 className="text-xs uppercase tracking-wider font-medium">{project.title}</h3>
                   <p className="text-xs text-gray-500 mt-0.5">{project.category}</p>

@@ -54,7 +54,6 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
                   } as any}
                 />
               </div>
-              <div className="page-overlay" />
             </div>
             <div className="w-1/2 pt-8">
               <h3 className="text-2xl font-light mb-4">{project.title}</h3>
