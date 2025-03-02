@@ -49,9 +49,6 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
                   sizes="50vw"
                   priority
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={{
-                    '--border-gradient': `linear-gradient(45deg, ${project.dominantColor || '#000'}, ${project.secondaryColor || '#000'})`
-                  } as any}
                 />
               </div>
             </div>
@@ -63,6 +60,7 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
           </motion.div>
         ))}
       </div>
+      <div className="page-overlay" />
     </div>
   );
 };

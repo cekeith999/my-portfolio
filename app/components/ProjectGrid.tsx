@@ -60,9 +60,6 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                     sizes="150px"
                     priority
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{
-                      '--border-gradient': `linear-gradient(45deg, ${project.dominantColor || '#000'}, ${project.secondaryColor || '#000'})`
-                    } as any}
                   />
                 </div>
                 <div className="mt-2">
@@ -74,6 +71,7 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
           </div>
         ))}
       </div>
+      <div className="page-overlay" />
     </div>
   );
 };

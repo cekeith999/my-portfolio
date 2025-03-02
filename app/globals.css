@@ -21,39 +21,26 @@ body {
   color: black;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
 }
 
 /* Image hover effects */
 .project-image-container {
   position: relative;
-  isolation: isolate;
-}
-
-.project-image-container img {
-  filter: grayscale(100%);
-  transition: all 0.3s ease;
 }
 
 .project-image-container::before {
   content: '';
   position: absolute;
   inset: -3px;
-  background: transparent;
-  border: 0px solid transparent;
-  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
   z-index: 1;
+  pointer-events: none;
 }
 
-.project-image-container::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: black;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: -1;
+.project-image-container img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
 }
 
 .project-image-container:hover img {
@@ -61,11 +48,21 @@ body {
 }
 
 .project-image-container:hover::before {
-  border: 3px solid;
-  border-image: var(--border-gradient) 1;
+  border-color: var(--accent);
 }
 
-.project-image-container:hover::after {
+/* Page overlay */
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.project-image-container:hover ~ .page-overlay {
   opacity: 0.05;
 }
 
