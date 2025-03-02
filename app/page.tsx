@@ -29,30 +29,30 @@ const projects = [
   },
   {
     id: '2',
-    title: 'Comic Style Shoe',
-    description: 'Innovative shoe design with comic-inspired elements, merging pop art with functional footwear.',
-    image: '/images/shoe-comicstyle-1.jpg',
+    title: 'Duck Slide Shoe',
+    description: 'Innovative shoe design with playful elements, merging pop art with functional footwear.',
+    image: '/images/shoe-duckslide-1.jpg',
     category: 'Footwear Design'
   },
   {
     id: '3',
-    title: 'Comic Style Glasses',
-    description: 'Eyewear design that incorporates comic art elements, creating a bold and unique aesthetic.',
-    image: '/images/glasses-comicstyle-1.jpg',
+    title: 'USC Shades',
+    description: 'Eyewear design that incorporates university spirit, creating a bold and unique aesthetic.',
+    image: '/images/glasses-uscshades-1.jpg',
     category: 'Eyewear Design'
   },
   {
     id: '4',
     title: 'Snake Earring',
     description: 'Detailed accessory design featuring serpentine motifs, blending nature with contemporary style.',
-    image: '/images/accessory-snake earring-1.jpg',
+    image: '/images/accessory-snakeearring-1.jpg',
     category: 'Accessory Design'
   },
   {
     id: '5',
     title: 'Fallen Blanket Mask',
     description: 'Experimental mask design incorporating textile elements, exploring the intersection of comfort and protection.',
-    image: '/images/mask-fallen blanket-1.jpg',
+    image: '/images/mask-fallenblanket-1.jpg',
     category: 'Mask Design'
   },
   {
