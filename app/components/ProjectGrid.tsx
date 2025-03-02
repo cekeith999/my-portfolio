@@ -9,8 +9,6 @@ interface Project {
   description: string;
   image: string;
   category: string;
-  dominantColor?: string;
-  secondaryColor?: string;
 }
 
 interface ProjectGridProps {
@@ -19,6 +17,16 @@ interface ProjectGridProps {
 }
 
 const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
+  // Create rows of 4 projects each
+  const rows = projects.reduce((acc, project, index) => {
+    const rowIndex = Math.floor(index / 4);
+    if (!acc[rowIndex]) {
+      acc[rowIndex] = [];
+    }
+    acc[rowIndex].push(project);
+    return acc;
+  }, [] as Project[][]);
+
   return (
     <div className="max-w-7xl mx-auto px-8">
       <header className="mb-[100px] text-center">
@@ -30,31 +38,35 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
         </p>
       </header>
       
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 md:gap-12 lg:gap-16 !important">
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            layoutId={`project-${project.id}`}
-            onClick={() => onProjectClick(project)}
-            className="cursor-pointer group w-full"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="relative aspect-[3/4] overflow-hidden bg-gray-100 project-image-container w-full">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                priority
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-sm uppercase tracking-wider font-medium">{project.title}</h3>
-              <p className="text-sm text-gray-500 mt-1">{project.category}</p>
-            </div>
-          </motion.div>
+      <div>
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex justify-center gap-[100px] mb-[100px] last:mb-0">
+            {row.map((project) => (
+              <motion.div
+                key={project.id}
+                layoutId={`project-${project.id}`}
+                onClick={() => onProjectClick(project)}
+                className="cursor-pointer group w-[150px]"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="150px"
+                    priority
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-2">
+                  <h3 className="text-xs uppercase tracking-wider font-medium">{project.title}</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">{project.category}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         ))}
       </div>
     </div>

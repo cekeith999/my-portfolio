@@ -18,89 +18,63 @@ const DetailedView = dynamic(() => import('./components/DetailedView'), {
   ssr: false
 });
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  dominantColor?: string;
-  secondaryColor?: string;
-}
-
 // Sample projects data with image paths
-const projects: Project[] = [
+const projects = [
   {
     id: '1',
     title: 'Football Mask',
     description: 'A unique mask design inspired by football aesthetics, combining sports elements with artistic expression.',
     image: '/images/mask-football-1.jpg',
-    category: 'Mask Design',
-    dominantColor: '#8B4513',
-    secondaryColor: '#D2691E'
+    category: 'Mask Design'
   },
   {
     id: '2',
     title: 'Duck Slide Shoe',
     description: 'Innovative shoe design with playful elements, merging pop art with functional footwear.',
     image: '/images/shoe-duckslide-1.jpg',
-    category: 'Footwear Design',
-    dominantColor: '#FFD700',
-    secondaryColor: '#FF8C00'
+    category: 'Footwear Design'
   },
   {
     id: '3',
     title: 'USC Shades',
     description: 'Eyewear design that incorporates university spirit, creating a bold and unique aesthetic.',
     image: '/images/glasses-uscshades-1.jpg',
-    category: 'Eyewear Design',
-    dominantColor: '#8B0000',
-    secondaryColor: '#DAA520'
+    category: 'Eyewear Design'
   },
   {
     id: '4',
     title: 'Snake Earring',
     description: 'Detailed accessory design featuring serpentine motifs, blending nature with contemporary style.',
     image: '/images/accessory-snakeearring-1.jpg',
-    category: 'Accessory Design',
-    dominantColor: '#2F4F4F',
-    secondaryColor: '#808080'
+    category: 'Accessory Design'
   },
   {
     id: '5',
     title: 'Fallen Blanket Mask',
     description: 'Experimental mask design incorporating textile elements, exploring the intersection of comfort and protection.',
     image: '/images/mask-fallenblanket-1.jpg',
-    category: 'Mask Design',
-    dominantColor: '#4B0082',
-    secondaryColor: '#800080'
+    category: 'Mask Design'
   },
   {
     id: '6',
     title: 'Liquid Effect Mask',
     description: 'Mask design with fluid aesthetics, creating an illusion of liquid movement in solid form.',
     image: '/images/mask-liquidy-1.jpg',
-    category: 'Mask Design',
-    dominantColor: '#00CED1',
-    secondaryColor: '#4169E1'
+    category: 'Mask Design'
   },
   {
     id: '7',
     title: 'Comic Style Mask',
     description: 'Mask design influenced by comic art, bringing illustrated aesthetics into three-dimensional form.',
     image: '/images/mask-comicstyle-1.jpg',
-    category: 'Mask Design',
-    dominantColor: '#DC143C',
-    secondaryColor: '#FF4500'
+    category: 'Mask Design'
   },
   {
     id: '8',
     title: 'Concrete Mask',
     description: 'Industrial-inspired mask design that explores the aesthetic potential of architectural materials.',
     image: '/images/mask-concrete-1.jpg',
-    category: 'Mask Design',
-    dominantColor: '#696969',
-    secondaryColor: '#A9A9A9'
+    category: 'Mask Design'
   }
 ];
 
@@ -135,7 +109,6 @@ export default function Home() {
               projects={projects}
               onProjectClick={handleProjectClick}
             />
-            <div className="page-overlay"></div>
           </motion.div>
         )}
 
