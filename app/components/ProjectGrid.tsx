@@ -38,7 +38,7 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
         </p>
       </header>
       
-      <div className="mt-[100px]">
+      <div>
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex justify-center gap-[100px] mb-[100px] last:mb-0">
             {row.map((project) => (
@@ -51,11 +51,10 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                 transition={{ duration: 0.2 }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
-                  <Image
+                  <img
                     src={project.image}
                     alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="mt-2">

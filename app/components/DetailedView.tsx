@@ -36,7 +36,7 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, handleKeyDown, onIndexChange, onClose, projects.length]);
+  }, [currentIndex]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);
@@ -93,11 +93,10 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
         className="h-full flex items-center justify-center"
       >
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={currentProject.image}
             alt={currentProject.title}
-            fill
-            className="object-contain"
+            className="absolute inset-0 w-full h-full object-contain"
           />
         </div>
       </motion.div>
@@ -107,7 +106,7 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
         <p className="text-gray-300">{currentProject.description}</p>
       </div>
 
-      <div className="fixed bottom-8 right-8 flex gap-4">
+      <div className="fixed left-8 top-1/2 -translate-y-1/2 flex flex-col gap-4">
         <button
           onClick={() => onIndexChange((currentIndex - 1 + projects.length) % projects.length)}
           className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
@@ -126,6 +125,9 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
+      </div>
+
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-4">
         <button
           onClick={() => onIndexChange((currentIndex + 1) % projects.length)}
           className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
