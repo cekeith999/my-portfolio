@@ -26,6 +26,52 @@ body {
   color: black;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+/* Page overlay for darkening effect */
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 30;
+}
+
+/* Image hover effects */
+.project-image-container {
+  position: relative;
+  z-index: 31;
+}
+
+.project-image-container img {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.project-image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 0px solid transparent;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 32;
+}
+
+.project-image-container:hover img {
+  filter: grayscale(0%);
+}
+
+.project-image-container:hover::after {
+  border: 3px solid;
+  border-image: var(--border-gradient) 1;
+}
+
+.project-image-container:hover + .page-overlay {
+  opacity: 0.05;
 }
 
 /* Interactive elements get pointer cursor */

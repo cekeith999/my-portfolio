@@ -9,6 +9,8 @@ interface Project {
   description: string;
   image: string;
   category: string;
+  dominantColor?: string;
+  secondaryColor?: string;
 }
 
 interface ProjectListProps {
@@ -39,7 +41,7 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
             transition={{ duration: 0.2 }}
           >
             <div className="w-1/2">
-              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 project-image-container">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -47,8 +49,12 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
                   sizes="50vw"
                   priority
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    '--border-gradient': `linear-gradient(45deg, ${project.dominantColor || '#000'}, ${project.secondaryColor || '#000'})`
+                  } as any}
                 />
               </div>
+              <div className="page-overlay" />
             </div>
             <div className="w-1/2 pt-8">
               <h3 className="text-2xl font-light mb-4">{project.title}</h3>
