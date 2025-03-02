@@ -6,23 +6,36 @@ import ViewSwitcher from './components/ViewSwitcher';
 import ProjectGrid from './components/ProjectGrid';
 import DetailedView from './components/DetailedView';
 
-// Sample projects data - replace with your actual projects
+// Sample projects data using existing Next.js and Vercel logos
 const projects = [
   {
     id: '1',
     title: 'Project One',
     description: 'Detailed description of project one. Add technologies used, your role, and the impact.',
-    image: '/placeholder1.jpg',
+    image: '/next.svg',
     category: 'Web Development'
   },
   {
     id: '2',
     title: 'Project Two',
     description: 'Detailed description of project two. Add technologies used, your role, and the impact.',
-    image: '/placeholder2.jpg',
+    image: '/vercel.svg',
     category: 'Mobile App'
   },
-  // Add more projects here
+  {
+    id: '3',
+    title: 'Project Three',
+    description: 'Detailed description of project three. Add technologies used, your role, and the impact.',
+    image: '/next.svg',
+    category: 'Web Development'
+  },
+  {
+    id: '4',
+    title: 'Project Four',
+    description: 'Detailed description of project four. Add technologies used, your role, and the impact.',
+    image: '/vercel.svg',
+    category: 'Mobile App'
+  }
 ];
 
 export default function Home() {
