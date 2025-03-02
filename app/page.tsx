@@ -41,18 +41,18 @@ const projects: Project[] = [
   },
   {
     id: '2',
-    title: 'Comic Style Shoe',
+    title: 'Duck Slide Shoe',
     description: 'Innovative shoe design with playful elements, merging pop art with functional footwear.',
-    image: '/images/shoe-comic style-1.jpg',
+    image: '/images/shoe-duckslide-1.jpg',
     category: 'Footwear Design',
     dominantColor: '#FFD700',
     secondaryColor: '#FF8C00'
   },
   {
     id: '3',
-    title: 'Comic Style Glasses',
-    description: 'Eyewear design that incorporates artistic style, creating a bold and unique aesthetic.',
-    image: '/images/glasses-comic style-1.jpg',
+    title: 'USC Shades',
+    description: 'Eyewear design that incorporates university spirit, creating a bold and unique aesthetic.',
+    image: '/images/glasses-uscshades-1.jpg',
     category: 'Eyewear Design',
     dominantColor: '#8B0000',
     secondaryColor: '#DAA520'
@@ -61,7 +61,7 @@ const projects: Project[] = [
     id: '4',
     title: 'Snake Earring',
     description: 'Detailed accessory design featuring serpentine motifs, blending nature with contemporary style.',
-    image: '/images/accessory-snake earring-1.jpg',
+    image: '/images/accessory-snakeearring-1.jpg',
     category: 'Accessory Design',
     dominantColor: '#2F4F4F',
     secondaryColor: '#808080'
@@ -70,7 +70,7 @@ const projects: Project[] = [
     id: '5',
     title: 'Fallen Blanket Mask',
     description: 'Experimental mask design incorporating textile elements, exploring the intersection of comfort and protection.',
-    image: '/images/mask-fallen blanket-1.jpg',
+    image: '/images/mask-fallenblanket-1.jpg',
     category: 'Mask Design',
     dominantColor: '#4B0082',
     secondaryColor: '#800080'
@@ -88,7 +88,7 @@ const projects: Project[] = [
     id: '7',
     title: 'Comic Style Mask',
     description: 'Mask design influenced by comic art, bringing illustrated aesthetics into three-dimensional form.',
-    image: '/images/mask-comic style-1.jpg',
+    image: '/images/mask-comicstyle-1.jpg',
     category: 'Mask Design',
     dominantColor: '#DC143C',
     secondaryColor: '#FF4500'
@@ -116,9 +116,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white relative">
-      <div className="page-overlay" />
-      
+    <main className="min-h-screen bg-white">
       <ViewSwitcher
         currentView={viewMode}
         onViewChange={setViewMode}
@@ -131,7 +129,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="pt-32 relative z-10"
+            className="pt-32"
           >
             <ProjectGrid
               projects={projects}
@@ -146,7 +144,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="pt-32 relative z-10"
+            className="pt-32"
           >
             <ProjectList
               projects={projects}
