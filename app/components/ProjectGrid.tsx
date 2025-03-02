@@ -28,15 +28,15 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
   }, [] as Project[][]);
 
   return (
-    <div className="max-w-[1800px] mx-auto px-16">
+    <div className="max-w-3xl mx-auto px-8">
       {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex justify-start gap-16 mb-24 last:mb-0">
+        <div key={rowIndex} className="flex justify-center gap-8 mb-12 last:mb-0">
           {row.map((project) => (
             <motion.div
               key={project.id}
               layoutId={`project-${project.id}`}
               onClick={() => onProjectClick(project)}
-              className="cursor-pointer group w-[calc(25%-48px)]"
+              className="cursor-pointer group w-[150px]"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
@@ -48,9 +48,9 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="mt-4">
+              <div className="mt-2">
                 <h3 className="text-xs uppercase tracking-wider font-medium">{project.title}</h3>
-                <p className="text-xs text-gray-500 mt-1">{project.category}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{project.category}</p>
               </div>
             </motion.div>
           ))}
