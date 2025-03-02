@@ -18,62 +18,62 @@ const DetailedView = dynamic(() => import('./components/DetailedView'), {
   ssr: false
 });
 
-// Sample projects data using existing Next.js and Vercel logos
+// Sample projects data with image paths
 const projects = [
   {
     id: '1',
     title: 'Project One',
     description: 'Detailed description of project one. Add technologies used, your role, and the impact.',
-    image: '/next.svg',
+    image: '/images/project1.jpg', // Replace with your actual image
     category: 'Web Development'
   },
   {
     id: '2',
     title: 'Project Two',
     description: 'Detailed description of project two. Add technologies used, your role, and the impact.',
-    image: '/vercel.svg',
+    image: '/images/project2.jpg', // Replace with your actual image
     category: 'Mobile App'
   },
   {
     id: '3',
     title: 'Project Three',
     description: 'Detailed description of project three. Add technologies used, your role, and the impact.',
-    image: '/next.svg',
+    image: '/images/project3.jpg', // Replace with your actual image
     category: 'Web Development'
   },
   {
     id: '4',
     title: 'Project Four',
     description: 'Detailed description of project four. Add technologies used, your role, and the impact.',
-    image: '/vercel.svg',
+    image: '/images/project4.jpg', // Replace with your actual image
     category: 'Mobile App'
   },
   {
     id: '5',
     title: 'Project Five',
     description: 'Detailed description of project five. Add technologies used, your role, and the impact.',
-    image: '/next.svg',
+    image: '/images/project5.jpg', // Replace with your actual image
     category: 'Web Development'
   },
   {
     id: '6',
     title: 'Project Six',
     description: 'Detailed description of project six. Add technologies used, your role, and the impact.',
-    image: '/vercel.svg',
+    image: '/images/project6.jpg', // Replace with your actual image
     category: 'Mobile App'
   },
   {
     id: '7',
     title: 'Project Seven',
     description: 'Detailed description of project seven. Add technologies used, your role, and the impact.',
-    image: '/next.svg',
+    image: '/images/project7.jpg', // Replace with your actual image
     category: 'Web Development'
   },
   {
     id: '8',
     title: 'Project Eight',
     description: 'Detailed description of project eight. Add technologies used, your role, and the impact.',
-    image: '/vercel.svg',
+    image: '/images/project8.jpg', // Replace with your actual image
     category: 'Mobile App'
   }
 ];
