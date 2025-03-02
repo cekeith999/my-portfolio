@@ -1,6 +1,6 @@
 'use client';
 
-type ViewMode = 'grid' | 'detailed';
+type ViewMode = 'grid' | 'list';
 
 interface ViewSwitcherProps {
   currentView: ViewMode;
@@ -34,9 +34,9 @@ const ViewSwitcher = ({ currentView, onViewChange }: ViewSwitcherProps) => {
         </svg>
       </button>
       <button
-        onClick={() => onViewChange('detailed')}
+        onClick={() => onViewChange('list')}
         className={`p-2 rounded-full transition-colors ${
-          currentView === 'detailed' ? 'bg-white text-black' : 'text-white'
+          currentView === 'list' ? 'bg-white text-black' : 'text-white'
         }`}
       >
         <svg
@@ -50,7 +50,9 @@ const ViewSwitcher = ({ currentView, onViewChange }: ViewSwitcherProps) => {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>

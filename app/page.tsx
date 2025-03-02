@@ -11,6 +11,9 @@ const ViewSwitcher = dynamic(() => import('./components/ViewSwitcher'), {
 const ProjectGrid = dynamic(() => import('./components/ProjectGrid'), {
   ssr: false
 });
+const ProjectList = dynamic(() => import('./components/ProjectList'), {
+  ssr: false
+});
 const DetailedView = dynamic(() => import('./components/DetailedView'), {
   ssr: false
 });
@@ -76,7 +79,7 @@ const projects = [
 ];
 
 export default function Home() {
-  const [viewMode, setViewMode] = useState<'grid' | 'detailed'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number>(0);
   const [isDetailedViewOpen, setIsDetailedViewOpen] = useState(false);
 
@@ -93,15 +96,31 @@ export default function Home() {
         onViewChange={setViewMode}
       />
 
-      <AnimatePresence>
-        {!isDetailedViewOpen && (
+      <AnimatePresence mode="wait">
+        {!isDetailedViewOpen && viewMode === 'grid' && (
           <motion.div
+            key="grid"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="pt-32"
           >
             <ProjectGrid
+              projects={projects}
+              onProjectClick={handleProjectClick}
+            />
+          </motion.div>
+        )}
+
+        {!isDetailedViewOpen && viewMode === 'list' && (
+          <motion.div
+            key="list"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="pt-32"
+          >
+            <ProjectList
               projects={projects}
               onProjectClick={handleProjectClick}
             />
