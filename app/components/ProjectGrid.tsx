@@ -51,10 +51,12 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                 transition={{ duration: 0.2 }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-gray-100">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={150}
+                    height={200}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="mt-2">

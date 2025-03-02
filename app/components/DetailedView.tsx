@@ -93,10 +93,13 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
         className="h-full flex items-center justify-center"
       >
         <div className="relative w-full h-full">
-          <img
+          <Image
             src={currentProject.image}
             alt={currentProject.title}
-            className="absolute inset-0 w-full h-full object-contain"
+            width={1200}
+            height={900}
+            className="object-contain"
+            style={{ width: '100%', height: '100%' }}
           />
         </div>
       </motion.div>
