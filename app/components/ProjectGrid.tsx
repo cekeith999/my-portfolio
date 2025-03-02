@@ -28,9 +28,18 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
   }, [] as Project[][]);
 
   return (
-    <div className="max-w-3xl mx-auto px-8">
+    <div className="max-w-7xl mx-auto px-8">
+      <header className="mb-32 text-center">
+        <h1 className="text-4xl font-light mb-4">Your Name</h1>
+        <h2 className="text-xl text-gray-600 mb-6">Software Engineer & Designer</h2>
+        <p className="max-w-2xl mx-auto text-gray-500">
+          A brief description about yourself, your expertise, and what drives you. 
+          This could be 2-3 sentences that highlight your key strengths and interests.
+        </p>
+      </header>
+      
       {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex justify-center gap-8 mb-12 last:mb-0">
+        <div key={rowIndex} className="flex justify-center gap-[100px] mb-[100px] last:mb-0">
           {row.map((project) => (
             <motion.div
               key={project.id}
