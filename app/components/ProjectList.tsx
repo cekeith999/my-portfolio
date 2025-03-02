@@ -60,7 +60,6 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
           </motion.div>
         ))}
       </div>
-      <div className="page-overlay" />
     </div>
   );
 };

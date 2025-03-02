@@ -57,7 +57,6 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
           </motion.div>
         ))}
       </div>
-      <div className="page-overlay" />
     </div>
   );
 };
