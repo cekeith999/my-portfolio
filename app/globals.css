@@ -23,6 +23,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Force grid layout */
+@media (min-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
 /* Image hover effects */
 .project-image-container {
   position: relative;

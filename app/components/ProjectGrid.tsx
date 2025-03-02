@@ -30,7 +30,7 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
         </p>
       </header>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 md:gap-12 lg:gap-16 !important">
         {projects.map((project) => (
           <motion.div
             key={project.id}
