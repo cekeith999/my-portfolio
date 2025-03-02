@@ -96,10 +96,10 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
           <Image
             src={currentProject.image}
             alt={currentProject.title}
-            width={1200}
-            height={900}
+            fill
+            sizes="100vw"
+            priority
             className="object-contain"
-            style={{ width: '100%', height: '100%' }}
           />
         </div>
       </motion.div>

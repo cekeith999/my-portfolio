@@ -54,8 +54,9 @@ const ProjectGrid = ({ projects, onProjectClick }: ProjectGridProps) => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={150}
-                    height={200}
+                    fill
+                    sizes="150px"
+                    priority
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
