@@ -36,7 +36,7 @@ const DetailedView = ({ projects, currentIndex, onClose, onIndexChange }: Detail
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex]);
+  }, [currentIndex, handleKeyDown, onIndexChange, onClose, projects.length]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.touches[0].clientX);

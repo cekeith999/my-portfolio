@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 type ViewMode = 'grid' | 'detailed';
 
 interface ViewSwitcherProps {
