@@ -44,6 +44,34 @@ const projects = [
     description: 'Detailed description of project four. Add technologies used, your role, and the impact.',
     image: '/vercel.svg',
     category: 'Mobile App'
+  },
+  {
+    id: '5',
+    title: 'Project Five',
+    description: 'Detailed description of project five. Add technologies used, your role, and the impact.',
+    image: '/next.svg',
+    category: 'Web Development'
+  },
+  {
+    id: '6',
+    title: 'Project Six',
+    description: 'Detailed description of project six. Add technologies used, your role, and the impact.',
+    image: '/vercel.svg',
+    category: 'Mobile App'
+  },
+  {
+    id: '7',
+    title: 'Project Seven',
+    description: 'Detailed description of project seven. Add technologies used, your role, and the impact.',
+    image: '/next.svg',
+    category: 'Web Development'
+  },
+  {
+    id: '8',
+    title: 'Project Eight',
+    description: 'Detailed description of project eight. Add technologies used, your role, and the impact.',
+    image: '/vercel.svg',
+    category: 'Mobile App'
   }
 ];
 
