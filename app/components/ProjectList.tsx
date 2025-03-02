@@ -30,13 +30,13 @@ const ProjectList = ({ projects, onProjectClick }: ProjectListProps) => {
         </p>
       </header>
       
-      <div className="mt-[100px]">
+      <div className="space-y-32">
         {projects.map((project) => (
           <motion.div
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => onProjectClick(project)}
-            className="flex gap-16 mb-32 last:mb-0 cursor-pointer group"
+            className="flex gap-16 cursor-pointer group"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
